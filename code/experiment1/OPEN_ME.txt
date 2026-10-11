@@ -1,0 +1,18 @@
+EVOLUTION — STUDY MOCKUP
+
+Double-click index.html to open the study in your browser.
+
+If you received a ZIP, unzip the whole folder first. Keep the assets, css, js,
+and vendor folders alongside index.html. No internet or software installation
+is needed. A current Chrome, Edge, Firefox, or Safari browser is recommended.
+
+Work through consent, familiarity, instructions, and the six randomized cases.
+Every case includes a realistic generated picture. Both interacting species
+appear in each of the two interacting-species pictures.
+
+The two hard cases each ask for three possible natural-selection explanations.
+Demographics and an optional feedback question come at the end.
+
+Download responses as CSV or JSON on the completion screen if you want to keep
+them. This mockup does not upload responses or issue payments. Closing or
+refreshing the tab discards unsaved responses; refreshing starts a new order.
