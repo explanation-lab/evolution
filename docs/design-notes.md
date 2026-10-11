@@ -1,6 +1,6 @@
 # Experiment 1 design notes
 
-Version 0.3.1, October 11, 2026.
+Version 0.3.2, October 11, 2026.
 
 The immediate pilot follows Shaun's October 11 proposal in “Projects for students.” The prior “teleology chat” motivates processing advantages of teleological representations and the possibility of teleological thinking even in people who can produce natural-selection explanations. The broader project includes other designs; this draft is the focused six-case version approved by David.
 
@@ -17,6 +17,8 @@ David requested required responses on every screen. Every case field, including 
 ## Wording choices
 
 The four historical cases are hypothetical. Duck dates retain Shaun's 70-million/30-million-year illustration but are introduced with “Imagine that the fossil record showed…” rather than asserted as an established fossil record. Giraffe neck change uses the same hypothetical fossil-record structure and 70-million/30-million-year dates as the duck case. Both joint evolutionary patterns are likewise explicitly imagined. The goat and ant descriptions identify the features without supplying their proposed benefits.
+
+Following Shaun's October 11 feedback on the mockup, the moth/bird case describes birds developing increased abilities in visual discrimination. It does not state that the improved ability distinguishes the moths from bark. Participants must supply that connection in their natural-selection explanation. The predator/prey relationship remains stated, as in Shaun's suggested wording.
 
 The main measure is the content/structure of explanations, not a forced-choice test or an automatically scored biological answer. Competence can be evaluated afterward from the easy cases. Historical natural-selection structure, current utility, need-based/goal-directed explanations, and scientifically correct biological hypotheses should be distinguished in a later coding scheme. No correctness feedback, scoring or screening is implemented.
 

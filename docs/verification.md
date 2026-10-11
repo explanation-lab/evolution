@@ -1,5 +1,9 @@
 # Draft verification
 
+## Version 0.3.2
+
+October 11, 2026. The moth/bird wording follows Shaun's suggested replacement: birds develop increased abilities in visual discrimination, with the connection to moth camouflage left for participants to make. The application scripts pass syntax checks and the rebuilt ZIP contains the revised wording. This text-only revision retains the layout and behavior verified in earlier versions.
+
 ## Version 0.3.1
 
 October 11, 2026. Checked all six cases in the browser. Each single caption's horizontal center matched its picture's center; each paired caption matched the center of its half of the picture. All measured offsets were zero at the desktop preview size. The paired moth/bird and cheetah/gazelle layouts were visually inspected. Image dimensions now match the bundled PNGs, and figures scale with their captions within the available width. No console errors occurred.

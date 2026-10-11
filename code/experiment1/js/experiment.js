@@ -1,6 +1,6 @@
 'use strict';
 
-const EVOLUTION_VERSION = '0.3.1';
+const EVOLUTION_VERSION = '0.3.2';
 const jsPsych = initJsPsych({ display_element: 'study' });
 const caseOrder = jsPsych.randomization.shuffle(EVOLUTION_CASES);
 const sessionId = typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : String(Date.now()) + '-' + Math.random().toString(36).slice(2,10);

@@ -22,7 +22,7 @@ const EVOLUTION_CASES = [
   {
     id: 'moth_bird_camouflage', category: 'interactive', title: 'Moths and birds', image: 'moth-bird.png', image_width: 1536, image_height: 1024,
     alt: 'Two realistic images: a moth resting on bark on the left and a bird on the right.', captions: ['Moth on tree bark', 'Insect-eating bird'],
-    scenario: 'Imagine that, over many generations, a population of moths became increasingly similar in appearance to the tree bark where they rested. During the same period, birds that preyed on these moths became increasingly able to distinguish them from the bark.',
+    scenario: 'Imagine that, over many generations, a population of moths became increasingly similar in appearance to the tree bark where they rested. During the same period, birds that preyed on these moths developed increased abilities in visual discrimination.',
     question: 'Please explain how these changes in both species could have occurred through natural selection.', count: 1
   },
   {
