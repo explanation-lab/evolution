@@ -1,5 +1,15 @@
 # Draft verification
 
+## Version 0.2.0
+
+October 11, 2026. The consent HTML was compared with `tort_cognition/code/shared/js/pilot-adult-forms.js` and matches verbatim. The revised Yes/No familiarity question has no introductory heading. Instructions are centered. State of residence and case skip controls are removed.
+
+A complete browser walkthrough of the extracted ZIP confirmed that every case blocks empty and whitespace-only responses. Both hard cases block advancement until all three fields are completed. Familiarity requires a selection. Demographics require age, gender, race and ethnicity; selecting Other requires accompanying text. Feedback blocks an empty response and accepts “None”. All six fully answered cases, demographic details, familiarity and feedback were verified in the downloaded JSON. No console errors occurred. Scripts pass syntax checks.
+
+The page background, interface text, buttons and borders are black and white. Consent keeps the source blue background. Animal images remain in their original colors, following David's clarification. The self-contained file-opening design is retained; the automation browser's file-URL restriction still prevents a literal double-click test.
+
+## Version 0.1.0 (historical)
+
 October 11, 2026, version 0.1.0.
 
 The extracted handoff ZIP was used for browser testing through a local HTTP preview. Two complete runs showed different individually shuffled case orders, each containing all six cases exactly once. All six pictures loaded. Easy and interactive cases displayed one text field; both hard cases displayed three.

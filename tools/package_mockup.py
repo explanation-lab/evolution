@@ -1,12 +1,14 @@
 """Bundle a self-contained double-clickable review copy using only Python stdlib."""
 from pathlib import Path
 import hashlib
+import re
 import zipfile
 
 root = Path(__file__).resolve().parents[1]
 output = root / "artifacts"
 output.mkdir(exist_ok=True)
-archive = output / "evolution-mockup-v0.1.0.zip"
+version = re.search(r"EVOLUTION_VERSION = '([^']+)'", (root / "code/experiment1/js/experiment.js").read_text()).group(1)
+archive = output / f"evolution-mockup-v{version}.zip"
 include = [root / "README.md", root / "docs", root / "code" / "experiment1"]
 with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as z:
     for source in include:

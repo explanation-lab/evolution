@@ -10,7 +10,7 @@ const EVOLUTION_CASES = [
   {
     id: 'giraffe_long_neck', category: 'easy', title: 'Giraffes', image: 'giraffe.png',
     alt: 'A realistic image of a giraffe with its long neck visible.', caption: 'Modern giraffe',
-    scenario: 'Imagine that the ancestors of modern giraffes had much shorter necks. Over many generations, their descendants came to have longer necks.',
+    scenario: 'Imagine that the fossil record showed that about 70 million years ago, the ancestors of modern giraffes had short necks, but by about 30 million years ago, their descendants had long necks.',
     question: 'Please set out how this change would be explained in terms of natural selection.', count: 1
   },
   {

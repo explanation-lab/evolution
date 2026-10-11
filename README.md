@@ -12,13 +12,13 @@ The six cases are shuffled individually on every new run:
 - Interactive: cheetah–gazelle speed; moth camouflage and bird visual discrimination.
 - Hard: goat horizontal pupils; Saharan silver ant hairs. Each requests three explanations.
 
-Consent comes first, followed by familiarity and instructions. Demographics and optional feedback follow the six cases. Responses are typed and there is no countdown. All six realistic pictures are AI-generated and bundled locally, including both species in each interactive picture.
+Consent comes first, followed by familiarity and instructions. Required demographics and feedback follow the six cases. Responses are typed and there is no countdown. All six realistic pictures are AI-generated and bundled locally, including both species in each interactive picture.
 
 ## Download responses
 
 At the end, download CSV or JSON. Nothing is uploaded. Closing or refreshing the tab discards unsaved responses. A new run creates a new anonymous review-session identifier and shuffles the cases again.
 
-Each case row includes its category, stable ID, displayed position, wording, response, overall response time (`rt`), time to first text input (`first_input_rt`), skip status, and number of nonempty explanations. First input latency includes reading and typing and is not a direct measure of when thinking began. The hard cases request more output, so their total response times are not matched to the easy/interactive cases.
+Each case row includes its category, stable ID, displayed position, wording, response, overall response time (`rt`), time to first text input (`first_input_rt`), and number of nonempty explanations. First input latency includes reading and typing and is not a direct measure of when thinking began. The hard cases request more output, so their total response times are not matched to the easy/interactive cases.
 
 ## Share with Shaun
 
@@ -28,7 +28,7 @@ To rebuild the ZIP with Python 3: `python3 tools/package_mockup.py`.
 
 ## Draft status
 
-This is a review mockup, not a deployed Prolific study. The evolutionary histories are explicitly hypothetical, including the duck fossil dates. The Cornell consent wording and demographic items were adapted from the current tort cognition adult forms. Recruitment compensation and the duration estimate should be finalized for the live study; local-review storage language will also need to reflect live collection.
+This is a review mockup, not a deployed Prolific study. The evolutionary histories are explicitly hypothetical, including the duck fossil dates. The actual Cornell consent HTML is copied verbatim from the current tort cognition adult forms, including its blue background. Its existing description, payment, and Qualtrics wording have been preserved as requested. Demographics retain age, gender, race, and ethnicity; state of residence is removed. All answers are required, including all three proposals on each hard case and a feedback response (which may be “None”). Familiarity is Yes/No only. The interface is black and white except for the blue consent form; animal pictures remain in color. Live collection details must be settled before recruitment.
 
 The separate normativity and explanatory-preference projects, audio think-aloud recording, time pressure, hosting, and live participant data storage are outside this draft.
 

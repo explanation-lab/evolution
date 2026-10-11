@@ -1,6 +1,6 @@
 'use strict';
 
-const EVOLUTION_VERSION = '0.1.0';
+const EVOLUTION_VERSION = '0.2.0';
 const jsPsych = initJsPsych({ display_element: 'study' });
 const caseOrder = jsPsych.randomization.shuffle(EVOLUTION_CASES);
 const sessionId = typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : String(Date.now()) + '-' + Math.random().toString(36).slice(2,10);
@@ -10,26 +10,36 @@ jsPsych.data.addProperties({
   case_order: caseOrder.map(c => c.id), response_mode: 'typed', timed_condition: false
 });
 
-function addSkipHandler() {
-  const button = document.getElementById('skip-response');
-  if (button) button.addEventListener('click', () => {
-    // Submit through the plugin so its response-time and form collection logic
-    // still runs; partial responses are retained rather than erased.
-    button.form.dataset.skipped = 'true';
-    button.form.requestSubmit();
+function requireWrittenResponses() {
+  document.querySelectorAll('textarea[required]').forEach(field => {
+    const validate = () => field.setCustomValidity(field.value.trim() ? '' : 'Please enter a response before continuing.');
+    field.addEventListener('input', validate);
+    validate();
   });
+}
+
+function requireOtherDetails() {
+  for (const name of ['gender','race']) {
+    const field = document.querySelector(`input[name="${name}_other"]`);
+    const validate = () => {
+      field.required = document.querySelector(`input[name="${name}"]:checked`)?.value === 'Other';
+      field.setCustomValidity(field.required && !field.value.trim() ? 'Please specify your response.' : '');
+    };
+    document.querySelectorAll(`input[name="${name}"]`).forEach(radio => radio.addEventListener('change',validate));
+    field.addEventListener('input',validate);
+    validate();
+  }
 }
 
 function createCaseTrial(item, position) {
   let startTime = null;
   let firstInputRt = null;
-  let skipped = false;
   const caption = item.captions
     ? `<figcaption class="paired-caption"><span>${item.captions[0]}</span><span>${item.captions[1]}</span></figcaption>`
     : `<figcaption>${item.caption}</figcaption>`;
   const fields = Array.from({length:item.count}, (_, i) => `
     <label class="response-label" for="explanation-${i+1}">${item.count === 1 ? 'Your explanation' : 'Possible explanation ' + (i+1)}</label>
-    <textarea id="explanation-${i+1}" name="explanation_${i+1}" rows="${item.count === 1 ? 6 : 4}" spellcheck="true"></textarea>`).join('');
+    <textarea id="explanation-${i+1}" name="explanation_${i+1}" rows="${item.count === 1 ? 6 : 4}" spellcheck="true" required></textarea>`).join('');
   return {
     type: jsPsychSurveyHtmlForm,
     html: `<section class="screen ${item.count === 3 ? 'hard-case' : ''}">
@@ -38,9 +48,8 @@ function createCaseTrial(item, position) {
       <figure class="photo"><img src="assets/images/${item.image}" alt="${item.alt}" width="1536" height="1024">${caption}</figure>
       <p class="scenario">${item.scenario}</p>
       <p class="question">${item.question}</p>
-      <p class="hint">Even if you are unsure, write down your thoughts as you work toward ${item.count === 1 ? 'a plausible explanation' : 'each possible explanation'}.${item.count === 3 ? ' If you cannot think of three, enter the explanations you can think of.' : ''}</p>
+      <p class="hint">Even if you are unsure, write down your thoughts as you work toward ${item.count === 1 ? 'a plausible explanation' : 'each possible explanation'}. Please respond in ${item.count === 1 ? 'the box' : 'each of the three boxes'} before continuing.</p>
       ${fields}
-      <div class="skip-wrap"><button id="skip-response" class="skip-button" type="button">I prefer not to answer this case</button></div>
     </section>`,
     button_label: 'Continue', autocomplete: false,
     data: { page_type: 'case', case_id: item.id, category: item.category,
@@ -51,14 +60,11 @@ function createCaseTrial(item, position) {
       document.querySelectorAll('textarea').forEach(field => field.addEventListener('input', () => {
         if (firstInputRt === null) firstInputRt = Math.round(performance.now()-startTime);
       }, { once:true }));
-      const form = document.getElementById('jspsych-survey-html-form');
-      form.addEventListener('submit', () => { skipped = form.dataset.skipped === 'true'; });
-      addSkipHandler();
+      requireWrittenResponses();
       window.scrollTo(0,0);
     },
     on_finish: data => {
       data.first_input_rt = firstInputRt;
-      data.skipped = skipped;
       data.explanation_count = Object.values(data.response).filter(v => typeof v === 'string' && v.trim()).length;
       for (let i=1; i<=item.count; i++) data['explanation_'+i] = data.response['explanation_'+i] || '';
     }
@@ -69,39 +75,39 @@ const timeline = [
   {
     type: jsPsychHtmlButtonResponse,
     stimulus: EVOLUTION_CONSENT,
-    choices: ['I agree', 'I do not agree'],
+    choices: ['I Agree'],
     data: { page_type: 'consent' },
-    on_load: () => { document.querySelectorAll('.jspsych-btn')[1]?.classList.add('secondary'); },
     on_finish: data => {
       data.consented = data.response === 0;
-      if (!data.consented) jsPsych.abortExperiment('<section class="screen"><h1>Thank you</h1><p>You have chosen not to participate. You may close this window.</p></section>');
     }
   },
   {
     type: jsPsychSurveyHtmlForm,
-    html: `<section class="screen"><p class="eyebrow">Before we begin</p><h1>A question about familiarity</h1>
+    html: `<section class="screen familiarity">
       <fieldset><legend>Are you familiar with evolution by natural selection?</legend>
-      ${['Yes','No','Not sure','Prefer not to answer'].map(v => `<label class="choice"><input type="radio" name="familiarity" value="${v}" required>${v}</label>`).join('')}</fieldset></section>`,
+      ${['Yes','No'].map(v => `<label class="choice"><input type="radio" name="familiarity" value="${v}" required>${v}</label>`).join('')}</fieldset></section>`,
     button_label: 'Continue', data: { page_type: 'familiarity' }
   },
   {
     type: jsPsychHtmlButtonResponse,
-    stimulus: `<section class="screen"><p class="eyebrow">Instructions</p><h1>Explain what you think</h1>
+    stimulus: `<section class="screen instructions"><p class="eyebrow">Instructions</p><h1>Explain what you think</h1>
       <div class="intro-text"><p>You will see six cases involving animals. For each case, we will ask you for a plausible explanation in terms of natural selection.</p>
       <p>We are particularly interested in your thinking process. Please write down your thoughts as you come up with an answer, even if you are not sure.</p>
       <p>For some cases, we will ask you to come up with three possible explanations. Please make each proposal specific to the animal and feature described, rather than simply saying that it happened through natural selection.</p>
-      <p>Take the time you need. You may leave a response blank if you prefer not to answer.</p></div></section>`,
-    choices: ['Begin'], data: { page_type: 'instructions' }
+      <p>Take the time you need. Please enter a response in every answer box before continuing.</p></div></section>`,
+    choices: ['Begin'], data: { page_type: 'instructions' },
+    on_load: () => { document.getElementById('jspsych-html-button-response-btngroup').style.justifyContent = 'center'; }
   },
   ...caseOrder.map(createCaseTrial),
   {
     type: jsPsychSurveyHtmlForm, html: EVOLUTION_DEMOGRAPHICS,
-    button_label: 'Continue', data: { page_type: 'demographics' }
+    button_label: 'Continue', data: { page_type: 'demographics' }, on_load: requireOtherDetails
   },
   {
     type: jsPsychSurveyHtmlForm,
-    html: `<section class="screen"><p class="eyebrow">One last question</p><h1>Feedback</h1><label class="response-label" for="feedback">Do you have any feedback about any part of this study?</label><p class="hint">This is optional.</p><textarea id="feedback" name="feedback" rows="5"></textarea></section>`,
+    html: `<section class="screen"><p class="eyebrow">One last question</p><h1>Feedback</h1><label class="response-label" for="feedback">Do you have any feedback about any part of this study?</label><p class="hint">Please enter your feedback, or write “None” if you have no feedback.</p><textarea id="feedback" name="feedback" rows="5" required></textarea></section>`,
     button_label: 'Finish', data: { page_type: 'feedback' },
+    on_load: requireWrittenResponses,
     on_finish: data => { data.completed_at = new Date().toISOString(); }
   },
   {
