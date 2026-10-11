@@ -1,6 +1,6 @@
 # Experiment 1 design notes
 
-Version 0.2.0, October 11, 2026.
+Version 0.3.0, October 11, 2026.
 
 The immediate pilot follows Shaun's October 11 proposal in “Projects for students.” The prior “teleology chat” motivates processing advantages of teleological representations and the possibility of teleological thinking even in people who can produce natural-selection explanations. The broader project includes other designs; this draft is the focused six-case version approved by David.
 
@@ -26,7 +26,7 @@ Two hard responses request three proposals each, while the other four request on
 
 Source: `tort_cognition/code/shared/js/pilot-adult-forms.js` in David's local GitHub checkout.
 
-The actual consent stimulus HTML is copied verbatim from that source, with the original blue background, heading, description, payment, confidentiality, Qualtrics reference, contacts and rights language. The original single “I Agree” choice is used; the form directs people who decline to close the window. This supersedes the adapted wording in version 0.1.0. Consent is not represented as a newly approved protocol. Existing consent text is preserved for this review mockup as explicitly requested; live recruitment/collection details remain to be finalized.
+The actual consent stimulus HTML is copied verbatim from that source, with the original blue background, heading, description, payment, confidentiality, Qualtrics reference, contacts and rights language. Consent offers “I agree” and “I do NOT agree”. Declining ends the experiment immediately with a thank-you message and skips familiarity, cases, demographics and feedback. This supersedes the adapted wording in version 0.1.0. Consent is not represented as a newly approved protocol. Existing consent text is preserved for this review mockup as explicitly requested; live recruitment/collection details remain to be finalized.
 
 Live Prolific deployment and server storage are not implemented. This draft stores responses only in memory and allows explicit CSV/JSON downloads. No private email bodies, credentials, or participant records are included in the repository or ZIP.
 
@@ -39,4 +39,4 @@ All images were made using the built-in image_gen tool at David's request. They 
 
 ## Presentation
 
-White page background, black text and controls, centered instructions, and realistic color animal pictures. The consent form retains its blue background.
+White page background, black text and controls, centered instructions, and realistic color animal pictures. The consent form retains its blue background. The top banner, displayed case numbers, and animal headings above pictures are removed. Picture captions are bold, 20-pixel text. Case IDs, titles and positions remain in researcher metadata and the completion review details.

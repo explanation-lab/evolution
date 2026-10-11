@@ -1,6 +1,6 @@
 'use strict';
 
-const EVOLUTION_VERSION = '0.2.0';
+const EVOLUTION_VERSION = '0.3.0';
 const jsPsych = initJsPsych({ display_element: 'study' });
 const caseOrder = jsPsych.randomization.shuffle(EVOLUTION_CASES);
 const sessionId = typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : String(Date.now()) + '-' + Math.random().toString(36).slice(2,10);
@@ -43,8 +43,6 @@ function createCaseTrial(item, position) {
   return {
     type: jsPsychSurveyHtmlForm,
     html: `<section class="screen ${item.count === 3 ? 'hard-case' : ''}">
-      <p class="eyebrow">Case ${position+1} of ${caseOrder.length}</p>
-      <h2>${item.title}</h2>
       <figure class="photo"><img src="assets/images/${item.image}" alt="${item.alt}" width="1536" height="1024">${caption}</figure>
       <p class="scenario">${item.scenario}</p>
       <p class="question">${item.question}</p>
@@ -75,10 +73,11 @@ const timeline = [
   {
     type: jsPsychHtmlButtonResponse,
     stimulus: EVOLUTION_CONSENT,
-    choices: ['I Agree'],
+    choices: ['I agree', 'I do NOT agree'],
     data: { page_type: 'consent' },
     on_finish: data => {
       data.consented = data.response === 0;
+      if (!data.consented) jsPsych.abortExperiment('<section class="screen"><h1>Thank you</h1><p>You have chosen not to participate. You may close this window.</p></section>');
     }
   },
   {

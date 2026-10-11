@@ -12,7 +12,7 @@ The six cases are shuffled individually on every new run:
 - Interactive: cheetah–gazelle speed; moth camouflage and bird visual discrimination.
 - Hard: goat horizontal pupils; Saharan silver ant hairs. Each requests three explanations.
 
-Consent comes first, followed by familiarity and instructions. Required demographics and feedback follow the six cases. Responses are typed and there is no countdown. All six realistic pictures are AI-generated and bundled locally, including both species in each interactive picture.
+Consent comes first; “I do NOT agree” goes directly to an ending screen. Agreeing leads to familiarity and instructions. Required demographics and feedback follow the six cases. Responses are typed and there is no countdown. All six realistic pictures are AI-generated and bundled locally, including both species in each interactive picture.
 
 ## Download responses
 

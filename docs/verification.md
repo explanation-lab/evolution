@@ -1,5 +1,9 @@
 # Draft verification
 
+## Version 0.3.0
+
+October 11, 2026. Browser checks on the extracted ZIP confirmed that “I do NOT agree” ends immediately with the non-participation thank-you screen and no console errors; “I agree” proceeds to familiarity and instructions. Case screens have no top banner, case number or animal heading. Color pictures and larger bold (20-pixel) captions were visually checked. Consent body HTML is unchanged. Required-response behavior remains as verified in 0.2.0.
+
 ## Version 0.2.0
 
 October 11, 2026. The consent HTML was compared with `tort_cognition/code/shared/js/pilot-adult-forms.js` and matches verbatim. The revised Yes/No familiarity question has no introductory heading. Instructions are centered. State of residence and case skip controls are removed.

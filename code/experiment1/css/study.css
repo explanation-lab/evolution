@@ -1,9 +1,7 @@
 :root { color-scheme: light; --ink:#000; --muted:#000; --accent:#000; --border:#000; }
 * { box-sizing:border-box; }
 body { margin:0; background:#fff; color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
-.study-header { width:min(980px,calc(100% - 48px)); margin:0 auto; padding:24px 0 18px; display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:600; border-bottom:1px solid var(--border); }
-.draft-label { font-size:12px; color:var(--muted); font-weight:400; }
-#study { min-height:calc(100vh - 75px); }
+#study { min-height:100vh; }
 .jspsych-display-element { font-family:Arial,Helvetica,sans-serif; font-size:17px; line-height:1.6; }
 .jspsych-content-wrapper { display:block; }
 .jspsych-content { width:min(900px,100%); max-width:900px; margin:0 auto; padding:32px 24px 48px; text-align:left; }
@@ -17,7 +15,7 @@ p { margin:0 0 16px; }
 .familiarity legend { font-size:24px; line-height:1.4; }
 .photo { margin:0 0 24px; }
 .photo img { display:block; width:100%; height:300px; object-fit:contain; background:#fff; border-radius:6px; }
-.photo figcaption { margin-top:8px; color:var(--muted); font-size:13px; text-align:center; }
+.photo figcaption { margin-top:8px; color:var(--muted); font-size:20px; font-weight:700; text-align:center; }
 .paired-caption { display:grid; grid-template-columns:1fr 1fr; }
 .scenario { margin-bottom:18px; }
 .question { font-weight:600; margin-bottom:10px; }
@@ -44,6 +42,6 @@ input[type=radio] { accent-color:var(--accent); }
 .data-note { margin-top:20px; color:var(--muted); font-size:14px; }
 details { margin-top:24px; font-size:14px; } summary { cursor:pointer; color:var(--muted); }
 .order-list { color:var(--muted); } .loading { padding:40px; }
-@media (max-width:600px) { .study-header { width:calc(100% - 32px); padding:18px 0; } .jspsych-content { padding:20px 12px 32px; } .screen { padding:24px 20px; } h1 { font-size:26px; } h2 { font-size:24px; } .photo img { height:230px; } .consent-body { padding:18px; } textarea { min-height:160px; } }
+@media (max-width:600px) { .jspsych-content { padding:20px 12px 32px; } .screen { padding:24px 20px; } h1 { font-size:26px; } h2 { font-size:24px; } .photo img { height:230px; } textarea { min-height:160px; } }
 
 #consent-scroll a { color:#000; }
