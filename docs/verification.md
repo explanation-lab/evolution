@@ -1,5 +1,9 @@
 # Draft verification
 
+## Version 0.3.1
+
+October 11, 2026. Checked all six cases in the browser. Each single caption's horizontal center matched its picture's center; each paired caption matched the center of its half of the picture. All measured offsets were zero at the desktop preview size. The paired moth/bird and cheetah/gazelle layouts were visually inspected. Image dimensions now match the bundled PNGs, and figures scale with their captions within the available width. No console errors occurred.
+
 ## Version 0.3.0
 
 October 11, 2026. Browser checks on the extracted ZIP confirmed that “I do NOT agree” ends immediately with the non-participation thank-you screen and no console errors; “I agree” proceeds to familiarity and instructions. Case screens have no top banner, case number or animal heading. Color pictures and larger bold (20-pixel) captions were visually checked. Consent body HTML is unchanged. Required-response behavior remains as verified in 0.2.0.

@@ -1,4 +1,4 @@
-:root { color-scheme: light; --ink:#000; --muted:#000; --accent:#000; --border:#000; }
+:root { color-scheme: light; --ink:#000; --muted:#000; --accent:#000; --border:#000; --photo-height:300px; }
 * { box-sizing:border-box; }
 body { margin:0; background:#fff; color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
 #study { min-height:100vh; }
@@ -13,10 +13,11 @@ p { margin:0 0 16px; }
 .instructions { text-align:center; }
 .intro-text { max-width:650px; margin:0 auto; }
 .familiarity legend { font-size:24px; line-height:1.4; }
-.photo { margin:0 0 24px; }
-.photo img { display:block; width:100%; height:300px; object-fit:contain; background:#fff; border-radius:6px; }
+.photo { width:min(100%,calc(var(--photo-height) * var(--image-ratio))); margin:0 auto 24px; }
+.photo img { display:block; width:100%; height:auto; background:#fff; border-radius:6px; }
 .photo figcaption { margin-top:8px; color:var(--muted); font-size:20px; font-weight:700; text-align:center; }
-.paired-caption { display:grid; grid-template-columns:1fr 1fr; }
+.paired-caption { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+.paired-caption span { text-wrap:balance; }
 .scenario { margin-bottom:18px; }
 .question { font-weight:600; margin-bottom:10px; }
 .hint { font-size:15px; color:var(--muted); margin:0 0 20px; }
@@ -42,6 +43,6 @@ input[type=radio] { accent-color:var(--accent); }
 .data-note { margin-top:20px; color:var(--muted); font-size:14px; }
 details { margin-top:24px; font-size:14px; } summary { cursor:pointer; color:var(--muted); }
 .order-list { color:var(--muted); } .loading { padding:40px; }
-@media (max-width:600px) { .jspsych-content { padding:20px 12px 32px; } .screen { padding:24px 20px; } h1 { font-size:26px; } h2 { font-size:24px; } .photo img { height:230px; } textarea { min-height:160px; } }
+@media (max-width:600px) { :root { --photo-height:230px; } .jspsych-content { padding:20px 12px 32px; } .screen { padding:24px 20px; } h1 { font-size:26px; } h2 { font-size:24px; } textarea { min-height:160px; } }
 
 #consent-scroll a { color:#000; }

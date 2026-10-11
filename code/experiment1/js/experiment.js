@@ -1,6 +1,6 @@
 'use strict';
 
-const EVOLUTION_VERSION = '0.3.0';
+const EVOLUTION_VERSION = '0.3.1';
 const jsPsych = initJsPsych({ display_element: 'study' });
 const caseOrder = jsPsych.randomization.shuffle(EVOLUTION_CASES);
 const sessionId = typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : String(Date.now()) + '-' + Math.random().toString(36).slice(2,10);
@@ -43,7 +43,7 @@ function createCaseTrial(item, position) {
   return {
     type: jsPsychSurveyHtmlForm,
     html: `<section class="screen ${item.count === 3 ? 'hard-case' : ''}">
-      <figure class="photo"><img src="assets/images/${item.image}" alt="${item.alt}" width="1536" height="1024">${caption}</figure>
+      <figure class="photo" style="--image-ratio:${item.image_width / item.image_height}"><img src="assets/images/${item.image}" alt="${item.alt}" width="${item.image_width}" height="${item.image_height}">${caption}</figure>
       <p class="scenario">${item.scenario}</p>
       <p class="question">${item.question}</p>
       <p class="hint">Even if you are unsure, write down your thoughts as you work toward ${item.count === 1 ? 'a plausible explanation' : 'each possible explanation'}. Please respond in ${item.count === 1 ? 'the box' : 'each of the three boxes'} before continuing.</p>

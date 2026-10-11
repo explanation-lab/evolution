@@ -1,6 +1,6 @@
 # Experiment 1 design notes
 
-Version 0.3.0, October 11, 2026.
+Version 0.3.1, October 11, 2026.
 
 The immediate pilot follows Shaun's October 11 proposal in “Projects for students.” The prior “teleology chat” motivates processing advantages of teleological representations and the possibility of teleological thinking even in people who can produce natural-selection explanations. The broader project includes other designs; this draft is the focused six-case version approved by David.
 
@@ -39,4 +39,4 @@ All images were made using the built-in image_gen tool at David's request. They 
 
 ## Presentation
 
-White page background, black text and controls, centered instructions, and realistic color animal pictures. The consent form retains its blue background. The top banner, displayed case numbers, and animal headings above pictures are removed. Picture captions are bold, 20-pixel text. Case IDs, titles and positions remain in researcher metadata and the completion review details.
+White page background, black text and controls, centered instructions, and realistic color animal pictures. The consent form retains its blue background. The top banner, displayed case numbers, and animal headings above pictures are removed. Picture captions are bold, 20-pixel text. Each figure matches its image's actual aspect ratio and displayed width, so captions center under the picture rather than across the response area. Paired captions each occupy half of their picture's width. Case IDs, titles and positions remain in researcher metadata and the completion review details.
