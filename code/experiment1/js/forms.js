@@ -29,4 +29,6 @@ const EVOLUTION_DEMOGRAPHICS = `
       <label><input type="radio" name="race" value="Other" required> Other: <input class="other-input" type="text" name="race_other" aria-label="Other race"></label>
     </fieldset>
     <fieldset class="demo-options"><legend>4. Ethnicity</legend>${demoRadios('ethnicity', ['Hispanic','Non-Hispanic'])}</fieldset>
+    <fieldset class="demo-options"><legend>5. Have you taken a biology course at college or university?</legend>${demoRadios('college_biology', ['Yes','No'])}</fieldset>
+    <fieldset class="demo-options"><legend>6. Have you taken a course that covered evolution or natural selection?</legend>${demoRadios('evolution_course', ['Yes','No'])}</fieldset>
   </section>`;

@@ -1,5 +1,11 @@
 # Draft verification
 
+## Version 0.4.0
+
+October 12, 2026. All prompts now use the same possible natural-selection explanation / why form, with three possible explanations requested for hard cases. Each interactive case consists of consecutive prey and predator screens, repeating the same paired picture and scenario. A Node VM check evaluated 1,000 seeded runs, covering all 120 orders of the remaining five case blocks: duck stayed first, pairs remained consecutive and prey-first, all eight response screens had the expected prompts, and their case/screen/species metadata matched the order.
+
+A complete browser walkthrough through a local HTTP preview confirmed duck first, gazelle then cheetah, moth then bird, unchanged paired pictures and scenarios, and all six pictures loading. A blank easy response and a partially answered hard case blocked advancement. Both new education questions offered only Yes/No and independently blocked advancement until answered; there were no education explanation fields. The downloaded JSON contained eight case-response rows, six distinct case IDs, four correctly labeled species responses with prey/predator roles and screen positions, three ordered explanations for each hard case, and both education answers. The browser reported no console errors or warnings. All three application scripts pass syntax checks. The direct file-URL automation limitation recorded below still applies.
+
 ## Version 0.3.3
 
 October 12, 2026. The duck case is fixed in the first case position; only the other five cases are passed to jsPsych's shuffle. The application timeline was evaluated over 1,000 runs using a seeded shuffle implementation in a Node VM: every run contained six unique cases, duck first, matching displayed positions and exported `case_order` metadata. The runs covered all 120 orders of the remaining five cases. Consent, familiarity and instructions still precede the cases. The application script passes a syntax check, and the rebuilt ZIP includes this ordering change and all local images and dependencies.

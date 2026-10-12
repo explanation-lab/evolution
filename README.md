@@ -12,13 +12,13 @@ The duck case always comes first. The other five cases are shuffled individually
 - Interactive: cheetah–gazelle speed; moth camouflage and bird visual discrimination.
 - Hard: goat horizontal pupils; Saharan silver ant hairs. Each requests three explanations.
 
-Consent comes first; “I do NOT agree” goes directly to an ending screen. Agreeing leads to familiarity and instructions. Required demographics and feedback follow the six cases. Responses are typed and there is no countdown. All six realistic pictures are AI-generated and bundled locally, including both species in each interactive picture.
+Consent comes first; “I do NOT agree” goes directly to an ending screen. Agreeing leads to familiarity and instructions. Each interactive case has two consecutive response screens, prey first and predator second, with the same paired image and scenario on both screens. There are eight response screens across six cases. All prompts use the same “Please come up with a possible natural-selection explanation for why…” form; hard cases ask for three possible explanations. Required demographics and feedback follow the cases. Two required Yes/No questions ask about college biology coursework and coursework covering evolution or natural selection, without requesting explanations. Responses are typed and there is no countdown. All six realistic pictures are AI-generated and bundled locally, including both species in each interactive picture.
 
 ## Download responses
 
 At the end, download CSV or JSON. Nothing is uploaded. Closing or refreshing the tab discards unsaved responses. A new run creates a new anonymous review-session identifier and reshuffles the five cases after the duck case.
 
-Each case row includes its category, stable ID, displayed position, wording, response, overall response time (`rt`), time to first text input (`first_input_rt`), and number of nonempty explanations. First input latency includes reading and typing and is not a direct measure of when thinking began. The hard cases request more output, so their total response times are not matched to the easy/interactive cases.
+Each response-screen row includes its category, stable case ID, case position, screen position within the case, response species and prey/predator role (for interactive cases), wording, response, overall response time (`rt`), time to first text input (`first_input_rt`), and number of nonempty explanations. First input latency includes reading and typing and is not a direct measure of when thinking began. The hard cases request more output, so their total response times are not matched to the easy/interactive cases.
 
 ## Share with Shaun
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const EVOLUTION_VERSION = '0.3.3';
+const EVOLUTION_VERSION = '0.4.0';
 const jsPsych = initJsPsych({ display_element: 'study' });
 const duckCase = EVOLUTION_CASES.find(item => item.id === 'duck_webbed_feet');
 const caseOrder = [duckCase, ...jsPsych.randomization.shuffle(
@@ -34,7 +34,7 @@ function requireOtherDetails() {
   }
 }
 
-function createCaseTrial(item, position) {
+function createCaseTrial(item, position, prompt, screenIndex) {
   let startTime = null;
   let firstInputRt = null;
   const caption = item.captions
@@ -48,14 +48,16 @@ function createCaseTrial(item, position) {
     html: `<section class="screen ${item.count === 3 ? 'hard-case' : ''}">
       <figure class="photo" style="--image-ratio:${item.image_width / item.image_height}"><img src="assets/images/${item.image}" alt="${item.alt}" width="${item.image_width}" height="${item.image_height}">${caption}</figure>
       <p class="scenario">${item.scenario}</p>
-      <p class="question">${item.question}</p>
+      <p class="question">${prompt.question}</p>
       <p class="hint">Even if you are unsure, write down your thoughts as you work toward ${item.count === 1 ? 'a plausible explanation' : 'each possible explanation'}. Please respond in ${item.count === 1 ? 'the box' : 'each of the three boxes'} before continuing.</p>
       ${fields}
     </section>`,
     button_label: 'Continue', autocomplete: false,
     data: { page_type: 'case', case_id: item.id, category: item.category,
       case_position: position+1, requested_explanations: item.count,
-      stimulus_text: item.scenario, question_text: item.question, image: item.image },
+      stimulus_text: item.scenario, question_text: prompt.question, image: item.image,
+      response_species: prompt.species || null, response_role: prompt.role || null,
+      case_screen_position: screenIndex+1, case_screen_count: item.prompts ? item.prompts.length : 1 },
     on_load: () => {
       startTime = performance.now();
       document.querySelectorAll('textarea').forEach(field => field.addEventListener('input', () => {
@@ -70,6 +72,13 @@ function createCaseTrial(item, position) {
       for (let i=1; i<=item.count; i++) data['explanation_'+i] = data.response['explanation_'+i] || '';
     }
   };
+}
+
+function createCaseTrials(item, position) {
+  // Shuffle the case as a unit; keep prey and predator screens consecutive.
+  return (item.prompts || [{ question: item.question }]).map((prompt, screenIndex) =>
+    createCaseTrial(item, position, prompt, screenIndex)
+  );
 }
 
 const timeline = [
@@ -94,13 +103,14 @@ const timeline = [
     type: jsPsychHtmlButtonResponse,
     stimulus: `<section class="screen instructions"><p class="eyebrow">Instructions</p><h1>Explain what you think</h1>
       <div class="intro-text"><p>You will see six cases involving animals. For each case, we will ask you for a plausible explanation in terms of natural selection.</p>
+      <p>Some cases involve two species. We will ask about each species on a separate screen.</p>
       <p>We are particularly interested in your thinking process. Please write down your thoughts as you come up with an answer, even if you are not sure.</p>
       <p>For some cases, we will ask you to come up with three possible explanations. Please make each proposal specific to the animal and feature described, rather than simply saying that it happened through natural selection.</p>
       <p>Take the time you need. Please enter a response in every answer box before continuing.</p></div></section>`,
     choices: ['Begin'], data: { page_type: 'instructions' },
     on_load: () => { document.getElementById('jspsych-html-button-response-btngroup').style.justifyContent = 'center'; }
   },
-  ...caseOrder.map(createCaseTrial),
+  ...caseOrder.flatMap(createCaseTrials),
   {
     type: jsPsychSurveyHtmlForm, html: EVOLUTION_DEMOGRAPHICS,
     button_label: 'Continue', data: { page_type: 'demographics' }, on_load: requireOtherDetails
