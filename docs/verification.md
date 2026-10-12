@@ -1,5 +1,9 @@
 # Draft verification
 
+## Version 0.3.3
+
+October 12, 2026. The duck case is fixed in the first case position; only the other five cases are passed to jsPsych's shuffle. The application timeline was evaluated over 1,000 runs using a seeded shuffle implementation in a Node VM: every run contained six unique cases, duck first, matching displayed positions and exported `case_order` metadata. The runs covered all 120 orders of the remaining five cases. Consent, familiarity and instructions still precede the cases. The application script passes a syntax check, and the rebuilt ZIP includes this ordering change and all local images and dependencies.
+
 ## Version 0.3.2
 
 October 11, 2026. The moth/bird wording follows Shaun's suggested replacement: birds develop increased abilities in visual discrimination, with the connection to moth camouflage left for participants to make. The application scripts pass syntax checks and the rebuilt ZIP contains the revised wording. This text-only revision retains the layout and behavior verified in earlier versions.

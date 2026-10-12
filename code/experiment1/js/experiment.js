@@ -1,8 +1,11 @@
 'use strict';
 
-const EVOLUTION_VERSION = '0.3.2';
+const EVOLUTION_VERSION = '0.3.3';
 const jsPsych = initJsPsych({ display_element: 'study' });
-const caseOrder = jsPsych.randomization.shuffle(EVOLUTION_CASES);
+const duckCase = EVOLUTION_CASES.find(item => item.id === 'duck_webbed_feet');
+const caseOrder = [duckCase, ...jsPsych.randomization.shuffle(
+  EVOLUTION_CASES.filter(item => item.id !== 'duck_webbed_feet')
+)];
 const sessionId = typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : String(Date.now()) + '-' + Math.random().toString(36).slice(2,10);
 jsPsych.data.addProperties({
   study: 'evolution', version: EVOLUTION_VERSION, mode: 'local_review',

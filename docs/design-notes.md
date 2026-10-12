@@ -1,14 +1,14 @@
 # Experiment 1 design notes
 
-Version 0.3.2, October 11, 2026.
+Version 0.3.3, October 12, 2026.
 
 The immediate pilot follows Shaun's October 11 proposal in “Projects for students.” The prior “teleology chat” motivates processing advantages of teleological representations and the possibility of teleological thinking even in people who can produce natural-selection explanations. The broader project includes other designs; this draft is the focused six-case version approved by David.
 
 ## Flow and responses
 
-Consent → familiarity → instructions → six shuffled cases → demographics → required feedback → local response downloads.
+Consent → familiarity → instructions → duck case → five shuffled cases → demographics → required feedback → local response downloads.
 
-Familiarity is asked once, before all cases, with Yes/No choices only. Either choice advances after a response is selected. Every participant sees each case exactly once. Cases are shuffled individually, with no category blocks and no requirement that an easy case comes first. Category labels are included in the exported data, not shown on screen. All cases have realistic AI-generated illustrative pictures; interactive cases show two animals in one two-panel picture.
+Familiarity is asked once, before all cases, with Yes/No choices only. Either choice advances after a response is selected. Every participant sees each case exactly once. Following David's October 12 request, the duck case always comes first; the other five cases are shuffled individually with no category blocks. Category labels are included in the exported data, not shown on screen. All cases have realistic AI-generated illustrative pictures; interactive cases show two animals in one two-panel picture.
 
 The easy and interactive cases request one typed explanation each. The goat and ant cases request three explanations in separate text boxes. Instructions ask participants to write their thoughts while working toward a plausible, specific natural-selection proposal. No example answer or account of the natural-selection mechanism is supplied. There is no countdown or audio recording.
 
@@ -22,7 +22,7 @@ Following Shaun's October 11 feedback on the mockup, the moth/bird case describe
 
 The main measure is the content/structure of explanations, not a forced-choice test or an automatically scored biological answer. Competence can be evaluated afterward from the easy cases. Historical natural-selection structure, current utility, need-based/goal-directed explanations, and scientifically correct biological hypotheses should be distinguished in a later coding scheme. No correctness feedback, scoring or screening is implemented.
 
-Two hard responses request three proposals each, while the other four request one. Total RT across these categories cannot isolate difficulty. Randomization means easy answers may follow hard cases; this is the approved order design. Typed text and first-input latency cannot establish the full sequence of covert reasoning in the way audio think-aloud might.
+Two hard responses request three proposals each, while the other four request one. Total RT across these categories cannot isolate difficulty. The duck case always precedes the others, while the giraffe case may follow hard cases. Typed text and first-input latency cannot establish the full sequence of covert reasoning in the way audio think-aloud might.
 
 ## Reused forms and changes
 

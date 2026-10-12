@@ -6,7 +6,7 @@ A local jsPsych mockup for the teleology / natural-selection explanation pilot.
 
 Open `code/experiment1/index.html` in a browser by double-clicking it. No install, build command, server, login, or internet connection is needed. Keep the experiment folder intact.
 
-The six cases are shuffled individually on every new run:
+The duck case always comes first. The other five cases are shuffled individually on every new run:
 
 - Easy: duck webbed feet; giraffe neck length.
 - Interactive: cheetah–gazelle speed; moth camouflage and bird visual discrimination.
@@ -16,7 +16,7 @@ Consent comes first; “I do NOT agree” goes directly to an ending screen. Agr
 
 ## Download responses
 
-At the end, download CSV or JSON. Nothing is uploaded. Closing or refreshing the tab discards unsaved responses. A new run creates a new anonymous review-session identifier and shuffles the cases again.
+At the end, download CSV or JSON. Nothing is uploaded. Closing or refreshing the tab discards unsaved responses. A new run creates a new anonymous review-session identifier and reshuffles the five cases after the duck case.
 
 Each case row includes its category, stable ID, displayed position, wording, response, overall response time (`rt`), time to first text input (`first_input_rt`), and number of nonempty explanations. First input latency includes reading and typing and is not a direct measure of when thinking began. The hard cases request more output, so their total response times are not matched to the easy/interactive cases.
 
