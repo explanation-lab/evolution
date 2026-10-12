@@ -1,5 +1,17 @@
 # Draft verification
 
+## Collection version 1.0.0
+
+October 12, 2026. Published on main in the public explanation-lab/evolution repository, with GitHub Pages hosting `collection/experiment1/`. The Console converter preserved the reviewed integration and generated manifest 1.2.0, schema 2.0.0, frozen client 1.5.1, and package fingerprint b20e72e38e49a673c7eefea6268156946bd0a5cbe51615fbe7f1a46d530e8dae.
+
+Created Console project Evolution (EVOLUTION-WJHY) and adult study Evolution Pilot 1 (EVOLUTION-PILOT-1-VTTH), within-participant launch group mixed, target 45, stage Sandbox testing. The published manifest was verified by the Console. A complete hosted browser walkthrough saved one Sandbox submission containing 13 raw trials, including eight distinct case-response rows and one demographics trial. All six pictures loaded. Ducks appeared first; both paired cases remained consecutive and prey-first. Required familiarity and written responses blocked empty advancement. A separate consent-refusal walkthrough ended immediately without increasing the Sandbox submission count.
+
+Downloaded and inspected the complete Sandbox export: 12 non-demographic response rows, eight unique explanation item IDs across six cases, three nonempty proposals for each hard case, intact timing and case order, four correctly identified species responses, preserved Prolific test identifiers, and one demographics row with the expected age/gender/race/ethnicity and Yes/No coursework answers. Confirmed the data format in the Console and verified it persisted after reloading. No participant exports are committed.
+
+Node checks verify that an incomplete or refused run cannot submit, a completed run saves once, failed writes offer a retry, and a successful retry cannot cause another successful submission. Tests against the actual frozen client completion functions confirm that production redirects only after a successful save, while failed writes and Sandbox runs never redirect. The existing 1,000-run ordering check still passes.
+
+Console launch preflight reports exactly two pending recruitment actions: add the new pilot's Prolific completion URL and confirm the Prolific link, 45 places, and matching completion code. Production recruitment and the final live redirect were not exercised. Manual researcher Sandbox review remains the next step. The original offline review copy and ZIP remain unchanged. The existing consent wording, including payment/duration and Qualtrics references, is preserved and needs review against actual recruitment and hosting before Live.
+
 ## Version 0.4.0
 
 October 12, 2026. All prompts now use the same possible natural-selection explanation / why form, with three possible explanations requested for hard cases. Each interactive case consists of consecutive prey and predator screens, repeating the same paired picture and scenario. A Node VM check evaluated 1,000 seeded runs, covering all 120 orders of the remaining five case blocks: duck stayed first, pairs remained consecutive and prey-first, all eight response screens had the expected prompts, and their case/screen/species metadata matched the order.
