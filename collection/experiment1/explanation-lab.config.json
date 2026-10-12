@@ -1,0 +1,44 @@
+{
+  "format": "explanation-lab-study-config",
+  "manifestVersion": "1.2.0",
+  "schemaVersion": "2.0.0",
+  "convertedAt": "2026-10-12T21:47:53.346Z",
+  "sourceZip": "evolution-collection-source.zip",
+  "jsPsychVersion": "8.3.0",
+  "experimentVersion": "1.0.0",
+  "clientVersion": "1.5.1",
+  "assignmentType": "within_participant",
+  "launchAssignmentParameter": "condition",
+  "launchConditions": [
+    "mixed"
+  ],
+  "conditions": [
+    "mixed"
+  ],
+  "internalFactors": [
+    "case",
+    "response_species"
+  ],
+  "internalConditionCells": [
+    "cheetah_gazelle_speed",
+    "duck_webbed_feet",
+    "giraffe_long_neck",
+    "goat_horizontal_pupils",
+    "moth_bird_camouflage",
+    "silver_ant_hairs"
+  ],
+  "demographicsConfirmed": true,
+  "demographicFields": [
+    "age",
+    "gender",
+    "gender_other",
+    "race",
+    "race_other",
+    "ethnicity",
+    "college_biology",
+    "evolution_course"
+  ],
+  "conversionOutcome": "ready",
+  "packageFingerprint": "b20e72e38e49a673c7eefea6268156946bd0a5cbe51615fbe7f1a46d530e8dae",
+  "originalBackupPaths": []
+}

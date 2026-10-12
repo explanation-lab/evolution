@@ -1,6 +1,8 @@
 # Evolution
 
-A local jsPsych mockup for the teleology / natural-selection explanation pilot.
+A jsPsych natural-selection explanation pilot, with separate offline review and hosted collection copies.
+
+The hosted collection version is in `collection/experiment1/`. See `docs/collection.md` for Console setup, saving, and Prolific completion behavior. The instructions below describe the offline review copy.
 
 ## Open the mockup
 
