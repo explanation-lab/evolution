@@ -1,5 +1,14 @@
 # Images
 
+## Current barn owl image (version 2.1.1)
+
+`images/barn-owl-photorealistic.png` (1536 × 1024) was generated on October 15, 2026 with the built-in image_gen tool in new-image mode. This photorealistic portrait replaces the anatomical illustration in the active study. The owl has intact feathers concealing its ear openings; the scenario describes their differing heights without claiming the openings are visible. The caption is simply “Barn owl”. The older illustration below is retained for provenance and is no longer displayed.
+
+Final generation prompt:
+
+> Use case: photorealistic-natural. Create a highly photorealistic wildlife photograph for an educational study, with the quality and natural detail of a professional wildlife camera portrait. One healthy adult barn owl (Tyto furcata), fully feathered, perched naturally, framed from the upper chest to the top of its head in a landscape 3:2 image. Nearly frontal head angle, both dark eyes visible, recognizable white heart-shaped facial disk, pale tan and mottled gray crown and outer plumage, a small natural ivory beak. Crisp fine feather detail, realistic anatomy and proportions, eyes sharp, soft diffuse daylight, subdued out-of-focus woodland background in earthy browns and greens. Entire head comfortably inside the frame with a little space above it. Its ear openings must remain naturally concealed beneath intact feathers, as in a normal photograph of a living owl. No exposed ear holes, no skin windows, no feathers pulled aside, no cutaway or anatomical diagram, no drawn or painted style, no artificial ears or horns, no labels, arrows, text, inset panels, people, prey, or watermark. It must look like an ordinary high-quality camera photograph, not an illustration.
+
+
 ## Pilot 2 additional hard cases (version 2.1.0)
 
 Generated October 15, 2026 with the built-in image_gen tool in new-image mode. Each PNG is 1536 × 1024. The owl image is an anatomical illustration with feathers moved aside: anatomical left (viewer right) opening is higher. The lanternfish is an illustrative rendering based on Diaphus watasei, not a species-identification plate. The bacterial image is a magnified schematic cutaway, not microscopy or a scale drawing. The pictures show the traits without depicting their benefits. See README.md for the biological research references.

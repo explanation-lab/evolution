@@ -21,7 +21,7 @@ Demographics, feedback, and the download screen follow. Every response screen ha
 
 ## Data
 
-There are nine case-response trials and a separate worked-example trial. The example records viewing time and its image filename without being treated as a participant explanation. Data include version `2.1.0`, pilot `pilot_2`, training example `finch_beaks`, case order, item IDs, scenario and question text, response text, response time, and first-input latency. Each case has one screen and uses `explanation_1`. The combined pair trials use the case ID as their item ID (rather than the old species-specific suffixes), `response_role: combined`, and `response_species: gazelle_and_cheetah` or `moth_and_bird`.
+There are nine case-response trials and a separate worked-example trial. The example records viewing time and its image filename without being treated as a participant explanation. Data include version `2.1.1`, pilot `pilot_2`, training example `finch_beaks`, case order, item IDs, scenario and question text, response text, response time, and first-input latency. Each case has one screen and uses `explanation_1`. The combined pair trials use the case ID as their item ID (rather than the old species-specific suffixes), `response_role: combined`, and `response_species: gazelle_and_cheetah` or `moth_and_bird`.
 
 This is the offline review package. The existing hosted Pilot 1 and its collection settings have not been replaced.
 
@@ -33,6 +33,6 @@ The finch example is a hypothetical illustration informed by the seed-availabili
 
 Researcher references only; participant scenarios describe the features without giving their functions or evolutionary histories:
 
-- [Krings et al., barn owl ear asymmetry](https://pubmed.ncbi.nlm.nih.gov/29279251/): anatomical left opening higher than right; the illustration parts feathers to reveal this soft-tissue feature.
+- [Krings et al., barn owl ear asymmetry](https://pubmed.ncbi.nlm.nih.gov/29279251/): anatomical left opening higher than right. The current screen uses a generated photorealistic portrait with intact feathers; the text explains that the ear openings are normally concealed.
 - [Lanternfish photophores](https://www.sciencedirect.com/science/article/pii/S0006291X19321138): ventrolateral light-producing organs in Diaphus watasei, used as the visual basis for the illustrative fish.
 - [Du et al., magnetosome evolution](https://journals.asm.org/doi/full/10.1128/msystems.00315-19) and [Frankel et al., magneto-aerotaxis](https://pubmed.ncbi.nlm.nih.gov/9251816/): intracellular magnetic crystals and alignment during swimming. The magnified cutaway is schematic, not microscopy or a scale drawing.

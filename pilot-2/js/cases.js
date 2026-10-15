@@ -40,9 +40,9 @@ const EVOLUTION_CASES = [
     question: 'Please come up with a possible natural-selection explanation for why these ants have silvery hairs.', count: 1
   },
   {
-    id: 'barn_owl_asymmetric_ears', category: 'hard', title: 'Barn owls', image: 'barn-owl-ears.png', image_width: 1536, image_height: 1024,
-    alt: 'An illustration of a barn owl with feathers moved aside to reveal its ear openings at different heights. The owl’s left ear opening, on the right of the picture, is higher.', caption: 'Barn owl ear openings (illustration)',
-    scenario: 'Barn owls have ear openings at different heights on the two sides of their heads. The illustration shows these openings with the feathers moved aside.',
+    id: 'barn_owl_asymmetric_ears', category: 'hard', title: 'Barn owls', image: 'barn-owl-photorealistic.png', image_width: 1536, image_height: 1024,
+    alt: 'A photorealistic close-up of a barn owl with a white heart-shaped face and tan and gray feathers.', caption: 'Barn owl',
+    scenario: 'Barn owls have ear openings at different heights on the two sides of their heads. These openings are normally hidden beneath their feathers.',
     question: 'Please come up with a possible natural-selection explanation for why barn owls have ear openings at different heights.', count: 1
   },
   {
