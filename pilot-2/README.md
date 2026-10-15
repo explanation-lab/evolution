@@ -6,7 +6,7 @@ Open `index.html` to review the self-contained jsPsych study. It uses the same b
 
 Consent, initial familiarity, and instructions precede:
 
-1. A short worked finch-beak example covering variation, differential survival/reproduction, inheritance, and population change.
+1. A worked finch-beak example with an illustrative picture of beak-size variation, a scenario and question, and four short steps covering variation, differential survival/reproduction, inheritance, and population change.
 2. Duck webbed feet, with the example no longer visible.
 3. Gazelle speed, then cheetah speed.
 4. Moth camouflage, then bird visual discrimination.
@@ -18,7 +18,7 @@ Demographics, feedback, and the download screen follow. Every response screen ha
 
 ## Data
 
-There are eight case-response trials and a separate worked-example trial. The example records viewing time without being treated as a participant explanation. Data include version `2.0.0`, pilot `pilot_2`, training example `finch_beaks`, case order, stable item/species IDs, scenario and question text, response text, response time, and first-input latency. Case positions identify six blocks; paired screens also have their own within-case positions. All case responses use `explanation_1`.
+There are eight case-response trials and a separate worked-example trial. The example records viewing time and its image filename without being treated as a participant explanation. Data include version `2.0.1`, pilot `pilot_2`, training example `finch_beaks`, case order, stable item/species IDs, scenario and question text, response text, response time, and first-input latency. Case positions identify six blocks; paired screens also have their own within-case positions. All case responses use `explanation_1`.
 
 This is the offline review package. The existing hosted Pilot 1 and its collection settings have not been replaced.
 

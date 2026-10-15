@@ -1,6 +1,6 @@
 'use strict';
 
-const EVOLUTION_VERSION = '2.0.0';
+const EVOLUTION_VERSION = '2.0.1';
 const jsPsych = initJsPsych({ display_element: 'study' });
 const CASE_SEQUENCE = [
   'duck_webbed_feet',
@@ -11,12 +11,20 @@ const CASE_SEQUENCE = [
   'giraffe_long_neck'
 ];
 const caseOrder = CASE_SEQUENCE.map(id => EVOLUTION_CASES.find(item => item.id === id));
-const FINCH_EXAMPLE = `<section class="screen instructions"><p class="eyebrow">Worked example</p><h1>Finch beaks and natural selection</h1>
-  <div class="intro-text"><p>Imagine a population of finches that eat seeds. The finches naturally vary in beak size: some have larger, deeper beaks than others.</p>
-  <p>During a drought, small, soft seeds become scarce, leaving mostly large, hard seeds. Finches with larger, deeper beaks can crack these seeds more easily. They are more likely to survive and reproduce than finches with smaller beaks.</p>
-  <p>Offspring tend to inherit beak traits from their parents. When the surviving finches reproduce, they pass on traits associated with their beak size. If these conditions continue, larger, deeper beaks can become more common over generations.</p>
-  <p>This is a natural-selection explanation: variation, differences in survival and reproduction, and inheritance together explain a change in the population.</p>
-  <p>Next, you will explain a different animal case in your own words.</p></div></section>`;
+const FINCH_IMAGE = { image: 'finch-beaks.png', width: 1536, height: 1024 };
+const FINCH_EXAMPLE = `<section class="screen worked-example"><p class="eyebrow">Worked example</p><h1>Finch beaks and natural selection</h1>
+  <p>We would like you to explain animal features in terms of natural selection. Here is an example.</p>
+  <figure class="photo" style="--image-ratio:${FINCH_IMAGE.width / FINCH_IMAGE.height}"><img src="assets/images/${FINCH_IMAGE.image}" alt="Three brown finches with small, intermediate, and larger, deeper beaks, from left to right." width="${FINCH_IMAGE.width}" height="${FINCH_IMAGE.height}"><figcaption>Finch beaks</figcaption></figure>
+  <p class="scenario">Imagine a population of seed-eating finches. During a drought, small, soft seeds become scarce, leaving mostly large, hard seeds.</p>
+  <p class="question">How could larger, deeper beaks become more common in this population over generations?</p>
+  <h2 class="example-heading">An explanation in terms of natural selection</h2>
+  <ol class="example-steps">
+    <li><strong>Variation.</strong> The finches already vary in beak size: some have larger, deeper beaks than others.</li>
+    <li><strong>Survival and reproduction.</strong> Finches with larger, deeper beaks can crack the remaining seeds more easily. They are more likely to survive and leave offspring.</li>
+    <li><strong>Inheritance.</strong> Offspring tend to inherit beak traits from their parents, so these offspring are more likely to have larger, deeper beaks too.</li>
+    <li><strong>Population change.</strong> If these conditions continue, larger, deeper beaks can become more common over generations.</li>
+  </ol>
+  <p class="example-next">Next, explain a different animal case in your own words.</p></section>`;
 const sessionId = typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : String(Date.now()) + '-' + Math.random().toString(36).slice(2,10);
 jsPsych.data.addProperties({
   study: 'evolution', version: EVOLUTION_VERSION, pilot: 'pilot_2', mode: 'local_review',
@@ -125,7 +133,7 @@ const timeline = [
     type: jsPsychHtmlButtonResponse,
     stimulus: FINCH_EXAMPLE,
     choices: ['Begin'],
-    data: { page_type: 'worked_example', trial_role: 'instruction', training_id: 'finch_beaks', stimulus_text: FINCH_EXAMPLE },
+    data: { page_type: 'worked_example', trial_role: 'instruction', training_id: 'finch_beaks', image: FINCH_IMAGE.image, stimulus_text: FINCH_EXAMPLE },
     on_load: () => {
       document.getElementById('jspsych-html-button-response-btngroup').style.justifyContent = 'center';
       window.scrollTo(0,0);
@@ -162,7 +170,7 @@ const timeline = [
 ];
 
 // HTML Image loading works under file:// without fetch(), modules or a server.
-Promise.all(EVOLUTION_CASES.map(item => new Promise((resolve,reject) => {
+Promise.all([...EVOLUTION_CASES, FINCH_IMAGE].map(item => new Promise((resolve,reject) => {
   const image = new Image();
   image.onload = resolve;
   image.onerror = () => reject(new Error('Missing picture: '+item.image));

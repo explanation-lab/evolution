@@ -12,6 +12,10 @@ h1 { font-size:30px; } h2 { font-size:26px; }
 p { margin:0 0 16px; }
 .instructions { text-align:center; }
 .intro-text { max-width:650px; margin:0 auto; }
+.worked-example .example-heading { font-size:18px; line-height:1.5; margin:20px 0 12px; }
+.example-steps { margin:0 0 20px; padding-left:24px; }
+.example-steps li { padding-left:4px; margin-bottom:12px; }
+.example-next { margin-bottom:0; }
 .familiarity legend { font-size:24px; line-height:1.4; }
 .photo { width:min(100%,calc(var(--photo-height) * var(--image-ratio))); margin:0 auto 24px; }
 .photo img { display:block; width:100%; height:auto; background:#fff; border-radius:6px; }
