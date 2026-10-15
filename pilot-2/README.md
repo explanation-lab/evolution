@@ -18,7 +18,7 @@ Demographics, feedback, and the download screen follow. Every response screen ha
 
 ## Data
 
-There are eight case-response trials and a separate worked-example trial. The example records viewing time and its image filename without being treated as a participant explanation. Data include version `2.0.1`, pilot `pilot_2`, training example `finch_beaks`, case order, stable item/species IDs, scenario and question text, response text, response time, and first-input latency. Case positions identify six blocks; paired screens also have their own within-case positions. All case responses use `explanation_1`.
+There are eight case-response trials and a separate worked-example trial. The example records viewing time and its image filename without being treated as a participant explanation. Data include version `2.0.2`, pilot `pilot_2`, training example `finch_beaks`, case order, stable item/species IDs, scenario and question text, response text, response time, and first-input latency. Case positions identify six blocks; paired screens also have their own within-case positions. All case responses use `explanation_1`.
 
 This is the offline review package. The existing hosted Pilot 1 and its collection settings have not been replaced.
 

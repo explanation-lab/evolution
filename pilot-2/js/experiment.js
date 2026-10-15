@@ -1,6 +1,6 @@
 'use strict';
 
-const EVOLUTION_VERSION = '2.0.1';
+const EVOLUTION_VERSION = '2.0.2';
 const jsPsych = initJsPsych({ display_element: 'study' });
 const CASE_SEQUENCE = [
   'duck_webbed_feet',
@@ -13,11 +13,11 @@ const CASE_SEQUENCE = [
 const caseOrder = CASE_SEQUENCE.map(id => EVOLUTION_CASES.find(item => item.id === id));
 const FINCH_IMAGE = { image: 'finch-beaks.png', width: 1536, height: 1024 };
 const FINCH_EXAMPLE = `<section class="screen worked-example"><p class="eyebrow">Worked example</p><h1>Finch beaks and natural selection</h1>
-  <p>We would like you to explain animal features in terms of natural selection. Here is an example.</p>
   <figure class="photo" style="--image-ratio:${FINCH_IMAGE.width / FINCH_IMAGE.height}"><img src="assets/images/${FINCH_IMAGE.image}" alt="Three brown finches with small, intermediate, and larger, deeper beaks, from left to right." width="${FINCH_IMAGE.width}" height="${FINCH_IMAGE.height}"><figcaption>Finch beaks</figcaption></figure>
-  <p class="scenario">Imagine a population of seed-eating finches. During a drought, small, soft seeds become scarce, leaving mostly large, hard seeds.</p>
-  <p class="question">How could larger, deeper beaks become more common in this population over generations?</p>
-  <h2 class="example-heading">An explanation in terms of natural selection</h2>
+  <p class="scenario">Imagine that, over many generations, larger, deeper beaks became more common in a population of seed-eating finches. During this period, droughts made small, soft seeds scarce, leaving mostly large, hard seeds.</p>
+  <p class="question">Please come up with a possible natural-selection explanation for why larger, deeper beaks became more common in this population.</p>
+  <h2 class="example-heading">Example answer</h2>
+  <p>One possible explanation in terms of natural selection would be:</p>
   <ol class="example-steps">
     <li><strong>Variation.</strong> The finches already vary in beak size: some have larger, deeper beaks than others.</li>
     <li><strong>Survival and reproduction.</strong> Finches with larger, deeper beaks can crack the remaining seeds more easily. They are more likely to survive and leave offspring.</li>
