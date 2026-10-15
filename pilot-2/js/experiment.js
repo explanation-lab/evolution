@@ -1,6 +1,6 @@
 'use strict';
 
-const EVOLUTION_VERSION = '2.0.2';
+const EVOLUTION_VERSION = '2.1.0';
 const jsPsych = initJsPsych({ display_element: 'study' });
 const CASE_SEQUENCE = [
   'duck_webbed_feet',
@@ -8,6 +8,9 @@ const CASE_SEQUENCE = [
   'moth_bird_camouflage',
   'goat_horizontal_pupils',
   'silver_ant_hairs',
+  'barn_owl_asymmetric_ears',
+  'lanternfish_light_organs',
+  'bacteria_magnetic_crystals',
   'giraffe_long_neck'
 ];
 const caseOrder = CASE_SEQUENCE.map(id => EVOLUTION_CASES.find(item => item.id === id));
@@ -75,7 +78,7 @@ function createCaseTrial(item, position, prompt, screenIndex) {
     data: { page_type: 'case', item_id: item.id + (prompt.species ? '_' + prompt.species : ''), case_id: item.id, category: item.category,
       case_position: position+1, requested_explanations: item.count,
       stimulus_text: item.scenario, question_text: prompt.question, image: item.image,
-      response_species: prompt.species || null, response_role: prompt.role || null,
+      response_species: prompt.species || item.response_species || null, response_role: prompt.role || item.response_role || null,
       case_screen_position: screenIndex+1, case_screen_count: item.prompts ? item.prompts.length : 1 },
     on_load: () => {
       startTime = performance.now();
@@ -94,7 +97,7 @@ function createCaseTrial(item, position, prompt, screenIndex) {
 }
 
 function createCaseTrials(item, position) {
-  // Keep each paired case consecutive, with prey followed by predator.
+  // Each paired case now asks about both species in a single response.
   return (item.prompts || [{ question: item.question }]).map((prompt, screenIndex) =>
     createCaseTrial(item, position, prompt, screenIndex)
   );
@@ -121,10 +124,10 @@ const timeline = [
   {
     type: jsPsychHtmlButtonResponse,
     stimulus: `<section class="screen instructions"><p class="eyebrow">Instructions</p><h1>Explain what you think</h1>
-      <div class="intro-text"><p>First, you will see a short worked example of an explanation in terms of natural selection. You will then see six cases involving animals and write your own explanations.</p>
-      <p>Some cases involve two species. We will ask about each species on a separate screen.</p>
+      <div class="intro-text"><p>First, you will see a short worked example of an explanation in terms of natural selection. You will then see ${caseOrder.length} cases involving living things and write your own explanations.</p>
+      <p>Some cases involve two species. For these cases, explain both changes together in one answer box.</p>
       <p>We are particularly interested in your thinking process. Please write down your thoughts as you come up with an answer, even if you are not sure.</p>
-      <p>Please give one explanation on each screen. Make your explanation specific to the animal and feature described, rather than simply saying that it happened through natural selection.</p>
+      <p>Please give one explanation on each screen. Make your explanation specific to the living things and features described, rather than simply saying that it happened through natural selection.</p>
       <p>Take the time you need. Please enter a response in every answer box before continuing.</p></div></section>`,
     choices: ['Continue'], data: { page_type: 'instructions' },
     on_load: () => { document.getElementById('jspsych-html-button-response-btngroup').style.justifyContent = 'center'; }
@@ -153,11 +156,11 @@ const timeline = [
   },
   {
     type: jsPsychHtmlButtonResponse, choices: [],
-    stimulus: `<section class="screen"><p class="eyebrow">Complete</p><h1>Thank you for taking part</h1><p>You have completed all six cases.</p>
+    stimulus: `<section class="screen"><p class="eyebrow">Complete</p><h1>Thank you for taking part</h1><p>You have completed all ${caseOrder.length} cases.</p>
       <p>You can download your responses from this review draft below.</p>
       <div class="completion-actions"><button id="download-csv" class="action" type="button">Download responses (CSV)</button><button id="download-json" class="action secondary" type="button">Download responses (JSON)</button></div>
       <p class="data-note" id="download-status" role="status">Your responses remain in this browser tab until it is closed or refreshed. Nothing has been uploaded.</p>
-      <details><summary>Review details</summary><p class="data-note">Case order for this run:</p><ol class="order-list">${caseOrder.map(c => `<li>${c.title}</li>`).join('')}</ol><p class="data-note">All animal images were generated with AI and are illustrative. The evolutionary histories described are hypothetical. Version ${EVOLUTION_VERSION}.</p></details></section>`,
+      <details><summary>Review details</summary><p class="data-note">Case order for this run:</p><ol class="order-list">${caseOrder.map(c => `<li>${c.title}</li>`).join('')}</ol><p class="data-note">All organism images were generated with AI and are illustrative. The evolutionary histories described are hypothetical. Version ${EVOLUTION_VERSION}.</p></details></section>`,
     data: { page_type: 'completion' },
     on_load: () => {
       for (const format of ['csv','json']) document.getElementById('download-'+format).addEventListener('click', () => {
