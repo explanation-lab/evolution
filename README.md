@@ -4,6 +4,12 @@ A jsPsych natural-selection explanation pilot, with separate offline review and 
 
 The hosted collection version is in `collection/experiment1/`. See `docs/collection.md` for Console setup, saving, and Prolific completion behavior. The instructions below describe the offline review copy.
 
+## Pilot 2 review
+
+[Try Pilot 2 online](https://explanation-lab.github.io/evolution/pilot-2/).
+
+Pilot 2 starts with a finch-beak worked example, then ducks, paired cases, goats, ants, and a final giraffe case. Each response screen requests one explanation. This preview runs without a login and offers CSV/JSON downloads at the end; it does not upload reviewer responses. The existing Pilot 1 collection link remains available.
+
 ## Open the mockup
 
 Open `code/experiment1/index.html` in a browser by double-clicking it. No install, build command, server, login, or internet connection is needed. Keep the experiment folder intact.

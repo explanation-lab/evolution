@@ -1,0 +1,20 @@
+EVOLUTION - PILOT 2 REVIEW
+
+Double-click index.html to open the study in your browser.
+
+If you received a ZIP, unzip the whole folder first. Keep the assets, css, js,
+and vendor folders alongside index.html. No internet or software installation
+is needed. A current Chrome, Edge, Firefox, or Safari browser is recommended.
+
+After consent, familiarity, and instructions, a short finch-beak worked example
+appears. It is followed by ducks, gazelles, cheetahs, moths, birds, goats,
+silver ants, and finally giraffes. The worked example is no longer visible
+while participants answer. The sequence is fixed.
+
+Each response screen asks for one explanation. The original pictures, styling,
+and controls are retained. Demographics and required feedback come at the end;
+enter "None" if you have no feedback.
+
+Download responses as CSV or JSON on the completion screen if you want to keep
+them. This review does not upload responses or issue payments. Closing or
+refreshing the tab discards unsaved responses.
