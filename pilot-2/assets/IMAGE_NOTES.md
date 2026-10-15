@@ -1,5 +1,14 @@
 # Images
 
+## Current bacterial image (version 2.1.2)
+
+`images/magnetic-bacteria-photorealistic.png` (1536 × 1024) was generated on October 15, 2026 using the built-in image_gen tool in new-image mode. It replaces the cutaway illustration in the active study with a photorealistic transmission-electron-microscopy style image of a bacterial cell and an internal crystal chain. It is generated, not an experimental micrograph, and carries no fabricated scale bar. The caption is simply “Bacterial cell”; the scenario says “picture”. The original cutaway below is retained for provenance but is no longer shown.
+
+Final generation prompt:
+
+> Create a photorealistic transmission electron microscopy style image for an educational study: a single magnetotactic bacterial cell, inspired by Magnetospirillum gryphiswaldense, viewed from above on a pale gray microscopy background. Landscape 3:2 composition, full cell comfortably centered with margins. The bacterium is a slender gently curved rod, approximately four times longer than wide, with a delicate cell envelope, faint naturally mottled translucent cytoplasm, and a single ordered internal chain of roughly 15 to 20 small dark magnetosome crystals running along its long axis. The crystals should be clear black dense compact angular particles, much smaller than the cell width, with tiny natural gaps, realistically visible through the translucent cell as in transmission electron microscopy. Subtle grayscale photographic film grain and authentic microscopy texture, high detail, flat transmitted-light appearance, no painterly or cartoon style, no glossy 3D rendering, no cutaway, no peeled membrane, no artificial bright colors, no enlarged faceted gemstones. No nucleus, mitochondria, magnetic compass, horseshoe magnet, field arrows, labels, text, watermark or fabricated scale bar. Show the magnetic crystal chain clearly without explaining its function. This is a generated photo-style study asset, not a claimed experimental micrograph.
+
+
 ## Current barn owl image (version 2.1.1)
 
 `images/barn-owl-photorealistic.png` (1536 × 1024) was generated on October 15, 2026 with the built-in image_gen tool in new-image mode. This photorealistic portrait replaces the anatomical illustration in the active study. The owl has intact feathers concealing its ear openings; the scenario describes their differing heights without claiming the openings are visible. The caption is simply “Barn owl”. The older illustration below is retained for provenance and is no longer displayed.

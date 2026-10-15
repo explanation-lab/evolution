@@ -52,9 +52,9 @@ const EVOLUTION_CASES = [
     question: 'Please come up with a possible natural-selection explanation for why these fish have light-producing organs along the underside of their bodies.', count: 1
   },
   {
-    id: 'bacteria_magnetic_crystals', category: 'hard', title: 'Magnetotactic bacteria', image: 'magnetic-bacteria.png', image_width: 1536, image_height: 1024,
-    alt: 'A magnified cutaway illustration of a single bacterial cell containing a chain of small dark magnetic crystals.', caption: 'Bacterial cell (magnified illustration)',
-    scenario: 'Bacteria are tiny, single-celled living things. Some bacteria that swim in water contain a chain of tiny magnetic crystals inside their cells, as shown in the illustration. These crystals make the cells line up with Earth’s magnetic field as they swim. Bacteria with this feature are called magnetotactic bacteria.',
+    id: 'bacteria_magnetic_crystals', category: 'hard', title: 'Magnetotactic bacteria', image: 'magnetic-bacteria-photorealistic.png', image_width: 1536, image_height: 1024,
+    alt: 'A photorealistic microscopy-style image of a bacterial cell containing a chain of small dark magnetic crystals.', caption: 'Bacterial cell',
+    scenario: 'Bacteria are tiny, single-celled living things. Some bacteria that swim in water contain a chain of tiny magnetic crystals inside their cells, as shown in the picture. These crystals make the cells line up with Earth’s magnetic field as they swim. Bacteria with this feature are called magnetotactic bacteria.',
     question: 'Please come up with a possible natural-selection explanation for why these bacteria contain a chain of magnetic crystals.', count: 1
   }
 ];

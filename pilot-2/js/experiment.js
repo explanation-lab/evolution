@@ -1,6 +1,6 @@
 'use strict';
 
-const EVOLUTION_VERSION = '2.1.1';
+const EVOLUTION_VERSION = '2.1.2';
 const jsPsych = initJsPsych({ display_element: 'study' });
 const CASE_SEQUENCE = [
   'duck_webbed_feet',
