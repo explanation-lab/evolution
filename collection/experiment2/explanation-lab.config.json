@@ -1,0 +1,46 @@
+{
+  "format": "explanation-lab-study-config",
+  "manifestVersion": "1.2.0",
+  "schemaVersion": "2.0.0",
+  "convertedAt": "2026-10-16T10:54:30.825Z",
+  "sourceZip": "evolution-pilot-2-collection-source.zip",
+  "jsPsychVersion": "8.3.0",
+  "experimentVersion": "2.2.0",
+  "clientVersion": "1.5.1",
+  "assignmentType": "within_participant",
+  "launchAssignmentParameter": "condition",
+  "launchConditions": [
+    "mixed"
+  ],
+  "conditions": [
+    "mixed"
+  ],
+  "internalFactors": [
+    "case"
+  ],
+  "internalConditionCells": [
+    "bacteria_magnetic_crystals",
+    "barn_owl_asymmetric_ears",
+    "cheetah_gazelle_speed",
+    "duck_webbed_feet",
+    "giraffe_long_neck",
+    "goat_horizontal_pupils",
+    "lanternfish_light_organs",
+    "moth_bird_camouflage",
+    "silver_ant_hairs"
+  ],
+  "demographicsConfirmed": true,
+  "demographicFields": [
+    "age",
+    "gender",
+    "gender_other",
+    "race",
+    "race_other",
+    "ethnicity",
+    "college_biology",
+    "evolution_course"
+  ],
+  "conversionOutcome": "ready",
+  "packageFingerprint": "9b8db812e985c70dafedc78c98380f83ff7216709853c886376d6b87d1b22faf",
+  "originalBackupPaths": []
+}
